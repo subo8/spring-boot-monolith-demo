@@ -1,11 +1,12 @@
 package com.sa.miniproject1.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
+
 public class Student {
 
     @Id
@@ -13,17 +14,26 @@ public class Student {
     private String firstName;
     private String lastName;
     private Double GPA;
-    private Integer DOB;
+    private Integer age;
+    private LocalDate DOB;
 
     public Student() {
     }
 
-    public Student(Integer id, String firstName, String lastName, Double gPA, Integer dob) {
+    public LocalDate getDOB() {
+        return DOB;
+    }
+
+    public void setDOB(LocalDate dob) {
+        this.DOB = dob;
+    }
+
+    public Student(Integer id, String firstName, String lastName, Double gPA, Integer age) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.GPA = gPA;
-        this.DOB = dob;
+        this.age = age;
     }
 
     public Integer getId() {
@@ -58,17 +68,17 @@ public class Student {
         this.GPA = gPA;
     }
 
-    public Integer getDOB() {
-        return DOB;
+    public Integer getAge() {
+        return age;
     }
 
-    public void setDOB(Integer dob) {
-        this.DOB = dob;
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     @Override
     public String toString() {
-        return "Student [GPA=" + GPA + ", DOB=" + DOB + ", firstName=" + firstName + ", id=" + id + ", lastName="
+        return "Student [GPA=" + GPA + ", age=" + age + ", firstName=" + firstName + ", id=" + id + ", lastName="
                 + lastName + "]";
     }
 }
