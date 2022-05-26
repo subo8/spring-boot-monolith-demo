@@ -3,8 +3,6 @@ package com.sa.miniproject1.controller;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.batch.runtime.BatchStatus;
-
 import org.springframework.batch.core.ExitStatus;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobExecution;
