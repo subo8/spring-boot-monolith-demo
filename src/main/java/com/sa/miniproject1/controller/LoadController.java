@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/load")
+@RequestMapping("api/v1/batch/load")
 public class LoadController {
 
     @Autowired
