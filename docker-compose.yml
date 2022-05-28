@@ -4,6 +4,21 @@ version: '3.7'
 
 # Define services
 services:
+  # Database Service (Mysql)
+  db:
+    image: mysql:8
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_DATABASE: university
+      MYSQL_USER: miniproject1
+      MYSQL_PASSWORD: minipassword
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - backend
   # App backend service
   app-server:
     # Configuration for building the docker image for the backend service
@@ -22,21 +37,6 @@ services:
       SPRING_DATASOURCE_PASSWORD: minipassword
     networks:
       # Networks to join (Services on the same network can communicate with each other using their name)
-      - backend
-  # Database Service (Mysql)
-  db:
-    image: mysql:8
-    ports:
-      - "3306:3306"
-    restart: always
-    environment:
-      MYSQL_DATABASE: university
-      MYSQL_USER: miniproject1
-      MYSQL_PASSWORD: minipassword
-      MYSQL_ROOT_PASSWORD: root
-    volumes:
-      - db-data:/var/lib/mysql
-    networks:
       - backend
 
 # Volumes
