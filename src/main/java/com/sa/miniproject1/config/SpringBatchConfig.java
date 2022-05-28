@@ -52,7 +52,7 @@ public class SpringBatchConfig {
     @Bean
     public FlatFileItemReader<Student> itemReader() {
         FlatFileItemReader<Student> flatFileItemReader = new FlatFileItemReader<>();
-        flatFileItemReader.setResource(new FileSystemResource("src/main/resources/student.csv"));
+        flatFileItemReader.setResource(new FileSystemResource("app/student.csv"));
         flatFileItemReader.setName("CSV-Reader");
         flatFileItemReader.setLinesToSkip(1);
         flatFileItemReader.setLineMapper(lineMapper());

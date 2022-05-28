@@ -22,7 +22,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @Component
-public class JwtProviderImpl implements JwtProvider{
+public class JwtProviderImpl implements JwtProvider {
     @Value("${app.jwt.secret}")
     private String JWT_SECRET;
 
@@ -50,8 +50,7 @@ public class JwtProviderImpl implements JwtProvider{
     public Authentication getAuthentication(HttpServletRequest request) {
         Claims claims = extractClaims(request);
 
-        if (claims == null)
-        {
+        if (claims == null) {
             return null;
         }
 
@@ -68,36 +67,30 @@ public class JwtProviderImpl implements JwtProvider{
                 .id(userId)
                 .build();
 
-        if (username == null)
-        {
+        if (username == null) {
             return null;
         }
         return new UsernamePasswordAuthenticationToken(userDetails, null, authorities);
     }
 
     @Override
-    public boolean isTokenValid(HttpServletRequest request)
-    {
+    public boolean isTokenValid(HttpServletRequest request) {
         Claims claims = extractClaims(request);
 
-        if (claims == null)
-        {
+        if (claims == null) {
             return false;
         }
 
-        if (claims.getExpiration().before(new Date()))
-        {
+        if (claims.getExpiration().before(new Date())) {
             return false;
         }
         return true;
     }
 
-    private Claims extractClaims(HttpServletRequest request)
-    {
+    private Claims extractClaims(HttpServletRequest request) {
         String token = SecurityUtils.extractAuthTokenFromRequest(request);
 
-        if (token == null)
-        {
+        if (token == null) {
             return null;
         }
 

@@ -31,10 +31,17 @@
 		</dependency>
 
 		<!--Lombok module-->
+		<!-- <dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency> -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
+			<version>1.18.20</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-impl -->
@@ -107,5 +114,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
