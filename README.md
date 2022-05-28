@@ -6,6 +6,8 @@ In this project we're (studentID: 613799, 613812) implemented
 * Change user role 
 * Only admin user running batch process
 
+Project URL: https://gitlab.com/miu3/sa/mini-project-1
+
 This time there is no UI (only Hello World on the home page :grin: )
 
 ## Tech stacks
