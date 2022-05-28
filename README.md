@@ -1,31 +1,33 @@
-Mini-Project-1:
+# Mini-Project-1:
 
-In this project we're (studentID: 613799, ) implemented user signup, sign in, change role and running batch processes using following tech stacks:
+In this project we're (studentID: 613799, 613812) implemented user signup, sign in, change role and running batch processes using following tech stacks:
 This time there is no UI (only Hello World on the home page :D)
 
-Tech stacks:
+## Tech stacks:
 1. Spring boot (dependencies: Spring-Batch, Spring-Securiy, Lombok, MySQL, JPA)
 2. JJWT (json web token)
 3. Docker
 4. MySQL 
 
-Docker commands
+## Docker commands
 1. docker-compose up
 2. docker-compose down
 
-Testing endpoints
+## Testing endpoints
 
-3. Create new user (method: POST)
-    url: localhost:8080/api/v1/authentication/sign-up
+3. Create new user (method: *POST*)
 
+    **localhost:8080/api/v1/authentication/sign-up**
+    ```json
     body: "must be json format"
          {
             "username": "admin",
             "password": "password",
             "name": "admin"
         }
-        
-    response: "you will see something like below"
+     ```           
+    Response: "you will see something like below"
+    ```json
         {
             "id": 1,
             "username": "admin",
@@ -35,15 +37,20 @@ Testing endpoints
             "role": "USER",
             "token": null
         }
+    ```
 
-4. Sign in with user credentials (method: POST)
-    url: localhost:8080/api/v1/authentication/sign-in
+4. Sign in with user credentials (method: *POST*)
+
+    **localhost:8080/api/v1/authentication/sign-in**
+    ```json
     body: "must be json format"
         {
             "username": "admin",
             "password": "password"
         }
-    response: "you will see something like below"
+    ```
+    Response: "you will see something like below"
+    ```json
         {
             "id": 1,
             "username": "admin",
@@ -53,23 +60,31 @@ Testing endpoints
             "role": "USER",
             "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjoiUk9MRV9BRE1JTiIsInVzZXJJZCI6MSwiZXhwIjoxNjUzNzc4MzgwfQ.jZm-QwW3Kgr1P505pkgWNsdffbuZu4Dbr9FX-YpxEY4cMgR_mBwkbcg-yBHFX3-drbTcARU7W5x1Mn8ME8D7LA"
         }
+    ```
 
-5. Change user role to Admin (method: PUTH)
-    comment: "Please use jwt token generated after you sign in"
-    url: localhost:8080/api/v1/user/change/ADMIN
-    authorization: Bearer Token eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjoiUk9MRV9VU0VSIiwidXNlcklkIjoxLCJleHAiOjE2NTM3Nzc3OTl9.-XPGx_EIDaiyMS2yyq58EvLtuBBtgFQHw3g3AQXorI2gCJTgZnv7VDsrBm8oJBUsvwErr-sGp8wGW0Bu88qIXw
-    response: true
+5. Change user role to Admin (method: *PUTH*)
+
+    **localhost:8080/api/v1/user/change/ADMIN**
+    >**Comment:** "Please use jwt token generated after you sign in"
+   
+    >**Authorization:** Bearer Token eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjoiUk9MRV9VU0VSIiwidXNlcklkIjoxLCJleHAiOjE2NTM3Nzc3OTl9.-XPGx_EIDaiyMS2yyq58EvLtuBBtgFQHw3g3AQXorI2gCJTgZnv7VDsrBm8oJBUsvwErr-sGp8wGW0Bu88qIXw
+
+    >**Response:** true
 
 6. After you change role, repeat step 4 (Sign in again and generate new jwt token information)
 
-7. Run batch process (method: GET)
-    url: localhost:8080/api/v1/batch/load
-    authorization: Bearer Token eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjoiUk9MRV9VU0VSIiwidXNlcklkIjoxLCJleHAiOjE2NTM3Nzc3OTl9.-XPGx_EIDaiyMS2yyq58EvLtuBBtgFQHw3g3AQXorI2gCJTgZnv7VDsrBm8oJBUsvwErr-sGp8wGW0Bu88qIXw
-    response: "you will see something like below"
+7. Run batch process (method: *GET*)
+
+    **localhost:8080/api/v1/batch/load**
+    
+    >**Authorization:** Bearer Token eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjoiUk9MRV9VU0VSIiwidXNlcklkIjoxLCJleHAiOjE2NTM3Nzc3OTl9.-XPGx_EIDaiyMS2yyq58EvLtuBBtgFQHw3g3AQXorI2gCJTgZnv7VDsrBm8oJBUsvwErr-sGp8wGW0Bu88qIXw
+
+    >**Response:** "you will see something like below"
+    ```json
         {
             "exitCode": "COMPLETED",
             "exitDescription": "",
             "running": false
         }
-
+    ```
 8. That's all, Thank you.
