@@ -1,10 +1,10 @@
 # Mini-Project-1:
 
 In this project we're (studentID: 613799, 613812) implemented 
-* user signup
-* sign in
-* change role 
-* running batch processes
+* User signup
+* User sign in
+* Change user role 
+* Only admin user running batch process
 
 This time there is no UI (only Hello World on the home page :grin: )
 
@@ -71,9 +71,9 @@ This time there is no UI (only Hello World on the home page :grin: )
 
     **localhost:8080/api/v1/user/change/ADMIN**
     >**Comment:** "Please use jwt token generated after you sign in"
-   
+    >
     >**Authorization:** Bearer Token eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjoiUk9MRV9VU0VSIiwidXNlcklkIjoxLCJleHAiOjE2NTM3Nzc3OTl9.-XPGx_EIDaiyMS2yyq58EvLtuBBtgFQHw3g3AQXorI2gCJTgZnv7VDsrBm8oJBUsvwErr-sGp8wGW0Bu88qIXw
-
+    >
     >**Response:** true
 
 6. **After you change role, repeat step 4 (Sign in again and generate new jwt token information)**
@@ -83,7 +83,7 @@ This time there is no UI (only Hello World on the home page :grin: )
     **localhost:8080/api/v1/batch/load**
     
     >**Authorization:** Bearer Token eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjoiUk9MRV9VU0VSIiwidXNlcklkIjoxLCJleHAiOjE2NTM3Nzc3OTl9.-XPGx_EIDaiyMS2yyq58EvLtuBBtgFQHw3g3AQXorI2gCJTgZnv7VDsrBm8oJBUsvwErr-sGp8wGW0Bu88qIXw
-
+    >
     >**Response:** "you will see something like below"
     ```json
         {
