@@ -1,9 +1,14 @@
 # Mini-Project-1:
 
-In this project we're (studentID: 613799, 613812) implemented user signup, sign in, change role and running batch processes using following tech stacks:
-This time there is no UI (only Hello World on the home page :D)
+In this project we're (studentID: 613799, 613812) implemented 
+* user signup
+* sign in
+* change role 
+* running batch processes
 
-## Tech stacks:
+This time there is no UI (only Hello World on the home page :grin: )
+
+## Tech stacks
 1. Spring boot (dependencies: Spring-Batch, Spring-Securiy, Lombok, MySQL, JPA)
 2. JJWT (json web token)
 3. Docker
