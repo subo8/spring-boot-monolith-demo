@@ -14,14 +14,17 @@ Docker commands
 2. docker-compose down
 
 Testing endpoints
+
 3. Create new user (method: POST)
     url: localhost:8080/api/v1/authentication/sign-up
+
     body: "must be json format"
          {
             "username": "admin",
             "password": "password",
             "name": "admin"
         }
+        
     response: "you will see something like below"
         {
             "id": 1,
