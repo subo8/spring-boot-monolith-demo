@@ -71,7 +71,7 @@ This time there is no UI (only Hello World on the home page :D)
 
     >**Response:** true
 
-6. After you change role, repeat step 4 (Sign in again and generate new jwt token information)
+6. **After you change role, repeat step 4 (Sign in again and generate new jwt token information)**
 
 7. Run batch process (method: *GET*)
 
