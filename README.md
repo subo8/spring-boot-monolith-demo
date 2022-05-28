@@ -69,7 +69,7 @@ This time there is no UI (only Hello World on the home page :grin: )
         }
     ```
 
-5. Change user role to Admin (method: *PUTH*)
+5. Change user role to Admin (method: *PUT*)
 
     **localhost:8080/api/v1/user/change/ADMIN**
     >**Comment:** "Please use jwt token generated after you sign in"
