@@ -2,18 +2,19 @@ package com.sa.miniproject1.model;
 
 import java.time.LocalDate;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-
+@Table(name="student")
 public class Student {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String firstName;
     private String lastName;
     private Double GPA;
+    @Transient
     private Integer age;
     private LocalDate DOB;
 
