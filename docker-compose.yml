@@ -35,8 +35,8 @@ services:
       - "8080:8080" # Forward the exposed port 8080 on the container to port 8080 on the host machine
     restart: always
     depends_on:
-      - db:
-          condition: service_healthy
+      db:
+        condition: service_healthy
     environment:
       # Pass environment variables to the service
       SPRING_DATASOURCE_URL: jdbc:mysql://mini-db:3306/university?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
