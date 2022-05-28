@@ -17,7 +17,7 @@ services:
       - db # This service depends on mysql. Start that first.
     environment:
       # Pass environment variables to the service
-      SPRING_DATASOURCE_URL: jdbc:mysql://mini-project-1-db-1:3306/university?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
+      SPRING_DATASOURCE_URL: jdbc:mysql://mini-project-1-main-db-1:3306/university?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
       SPRING_DATASOURCE_USERNAME: miniproject1
       SPRING_DATASOURCE_PASSWORD: minipassword
     networks:
