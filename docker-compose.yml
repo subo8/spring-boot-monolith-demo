@@ -10,12 +10,16 @@ services:
     ports:
       - "3306:3306"
     restart: always
-    container_name: mini-project-1-main-db-1
+    container_name: mini-db
     environment:
       MYSQL_DATABASE: university
       MYSQL_USER: miniproject1
       MYSQL_PASSWORD: minipassword
       MYSQL_ROOT_PASSWORD: root
+    healthcheck:
+      test: [ "CMD", "root", "ping", "-h", "localhost" ]
+      timeout: 20s
+      retries: 10
     volumes:
       - db-data:/var/lib/mysql
     networks:
@@ -26,15 +30,16 @@ services:
     build:
       context: ./ # Use an image built from the specified dockerfile in the directory.
       dockerfile: Dockerfile
-    container_name: mini-project-1-main-app-server-1
+    container_name: app-server-1
     ports:
       - "8080:8080" # Forward the exposed port 8080 on the container to port 8080 on the host machine
     restart: always
     depends_on:
-      - db # This service depends on mysql. Start that first.
+      - db:
+          condition: service_healthy
     environment:
       # Pass environment variables to the service
-      SPRING_DATASOURCE_URL: jdbc:mysql://mini-project-1-main-db-1:3306/university?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
+      SPRING_DATASOURCE_URL: jdbc:mysql://mini-db:3306/university?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
       SPRING_DATASOURCE_USERNAME: miniproject1
       SPRING_DATASOURCE_PASSWORD: minipassword
     networks:
@@ -42,8 +47,6 @@ services:
       - backend
 # Volumes
 volumes:
-  db-data:
-
-    # Networks to be created to facilitate communication between containers
+  db-data: # Networks to be created to facilitate communication between containers
 networks:
   backend:
