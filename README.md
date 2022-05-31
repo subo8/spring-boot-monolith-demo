@@ -1,6 +1,6 @@
 # Spring boot batch process monolith style:
 
-In this project we're (studentID: 613799, 613812) implemented 
+In this project following implemented 
 * User signup
 * User sign in
 * Change user role 
