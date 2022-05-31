@@ -1,4 +1,4 @@
-# Mini-Project-1:
+# Spring boot batch process monolith style:
 
 In this project we're (studentID: 613799, 613812) implemented 
 * User signup
